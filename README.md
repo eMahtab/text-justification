@@ -91,10 +91,10 @@ class Solution {
         if (line.size() == 1 || i == words.length) {
             return String.join(" ", line) + " ".repeat(extraSpaces);
         }
-        int wordCount = line.size() - 1;
-        int spacesPerWord = extraSpaces / wordCount;
-        int needsExtraSpace = extraSpaces % wordCount;
-        for (int j = 0; j < wordCount; j++) {
+        int wordsToAdjustSpaces = line.size() - 1;
+        int spacesPerWord = extraSpaces / wordsToAdjustSpaces;
+        int needsExtraSpace = extraSpaces % wordsToAdjustSpaces;
+        for (int j = 0; j < wordsToAdjustSpaces; j++) {
             line.set(j, line.get(j) + " ".repeat(spacesPerWord));
         }
         for (int j = 0; j < needsExtraSpace; j++) {
