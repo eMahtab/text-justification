@@ -83,11 +83,11 @@ class Solution {
     }
 
     private String createLine(List<String> line, int i, String[] words, int maxWidth) {
-        int baseLength = -1;
+        int actualLineLength = -1;
         for (String word : line) {
-            baseLength += word.length() + 1;
+            actualLineLength += word.length() + 1;
         }
-        int extraSpaces = maxWidth - baseLength;
+        int extraSpaces = maxWidth - actualLineLength;
         if (line.size() == 1 || i == words.length) {
             return String.join(" ", line) + " ".repeat(extraSpaces);
         }
